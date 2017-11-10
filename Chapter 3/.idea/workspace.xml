@@ -10,48 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Ex.8_Software_Sale.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ex.8_Software_Sale.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ex.9_Shipping_Charges.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ex.9_Shipping_Charges.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ex.10_Body_Mass_Index_Program_Enhancement.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ex.10_Body_Mass_Index_Program_Enhancement.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ex.11_Time_Calculator.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Ex.11_Time_Calculator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -74,10 +33,13 @@
         <option value="$PROJECT_DIR$/Ex.9_Shipping_Charges.py" />
         <option value="$PROJECT_DIR$/Ex.10_Body_Mass_Index_Program_Enhancement.py" />
         <option value="$PROJECT_DIR$/Ex.11_Time_Calculator.py" />
+        <option value="$PROJECT_DIR$/Ex.12_System_diagnostic.py" />
+        <option value="$PROJECT_DIR$/Ex.13_February_days.py" />
+        <option value="$PROJECT_DIR$/Ex.14_Hit_The_Target_Modification.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-11" />
     <option name="width" value="982" />
     <option name="height" value="1021" />
@@ -132,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Ex.11_Time_Calculator">
+  <component name="RunManager" selected="Python.Ex.14_Hit_The_Target_Modification">
     <configuration name="Ex.10_Body_Mass_Index_Program_Enhancement" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -167,7 +129,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Ex.7_Book_Club_Points" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Ex.12_System_diagnostic" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -179,12 +141,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Chapter 3" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ex.7_Book_Club_Points.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ex.12_System_diagnostic.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Ex.8_Software_Sale" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Ex.13_February_days" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -196,12 +158,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Chapter 3" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ex.8_Software_Sale.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ex.13_February_days.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Ex.9_Shipping_Charges" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Ex.14_Hit_The_Target_Modification" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -213,25 +175,25 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Chapter 3" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ex.9_Shipping_Charges.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ex.14_Hit_The_Target_Modification.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Ex.7_Book_Club_Points" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Ex.8_Software_Sale" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Ex.9_Shipping_Charges" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Ex.10_Body_Mass_Index_Program_Enhancement" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Ex.11_Time_Calculator" />
+      <item index="0" class="java.lang.String" itemvalue="Python.Ex.10_Body_Mass_Index_Program_Enhancement" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Ex.11_Time_Calculator" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Ex.12_System_diagnostic" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Ex.13_February_days" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Ex.14_Hit_The_Target_Modification" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Ex.11_Time_Calculator" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Ex.10_Body_Mass_Index_Program_Enhancement" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Ex.9_Shipping_Charges" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Ex.8_Software_Sale" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Ex.7_Book_Club_Points" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Ex.14_Hit_The_Target_Modification" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Ex.13_February_days" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Ex.12_System_diagnostic" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Ex.11_Time_Calculator" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Ex.10_Body_Mass_Index_Program_Enhancement" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +211,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-12" y="-12" width="1944" height="1034" extended-state="7" />
+    <frame x="-12" y="-12" width="1944" height="1034" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24972856" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -354,12 +316,36 @@
     <entry file="file://$PROJECT_DIR$/Ex.10_Body_Mass_Index_Program_Enhancement.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ex.11_Time_Calculator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ex.12_System_diagnostic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ex.13_February_days.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ex.14_Hit_The_Target_Modification.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
