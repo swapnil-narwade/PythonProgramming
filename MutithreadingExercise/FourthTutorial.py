@@ -6,8 +6,10 @@ total = 0
 def add_total():
     global total
     while total < 20000:
-        lock.acquire()
-        total += 3
+        lock.acquire()      #acquire lock where you want to make the program to use by other
+                            #thread to use without the global changes
+        total += 3          #here we want to make change in total but dont want to make change by other thread
+                            #without releasing the lock so that other thread wont use it till its release
 
         print("this is thread 1 "+str(total)+" goodbye")
         lock.release()
