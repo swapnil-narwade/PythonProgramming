@@ -1,12 +1,15 @@
 #name Swapnil Narwade
 #UTA ID-- smn6025
-#Assignment-1
+#Assignment-2
 #referances:-- 1)	https://docs.python.org/2/library/httplib.html
 # 2)	https://docs.python.org/2/library/datetime.html
 # 3)	https://www.learnpython.org/en/Modules_and_Packages
 # 4)	https://github.com/buckyroberts/Turtle/tree/master/Multiple_Clients
 # 5)	https://www.youtube.com/watch?v=Po5JHXIoDr0&t=5s
 
+import os
+from tkinter import *
+import tkinter.messagebox
 import socket                                     #importing all the required libraries
 import threading
 import time
@@ -20,36 +23,9 @@ import urllib
 threads = [1, 2]                                    #number of threads using
 queue = Queue()                                     #using queue to save the threads
 connections = []                                    #all the connections is going to be saved in here
-addresses = []                                      #all the sddress are going to be stored in here
-
-
-# class Packet(object):
-#     message={ 'message': " ",
-#              'host':  " ",
-#              'user_agent': 'Mozila/5.0',
-#              'connection' : 'open',
-#              'content_type' : 'text',
-#              'content_length' : 'len(message)',
-#              'date' : datetime.date(2009, 5, 12) }
-#
-    # def __init__(self):
-    #     self.message=""
-    #     self.host=""
-    #     self.user_agent=""
-    #     self.connection="open"
-    #     self.content_type = "text"
-    #     self.date=datetime.date(2009, 5, 12)
-    #
-
-    # def connection():
-    #     headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain"}
-    #     conn = httplib.HTTPConnection(port)
-    #     conn.request("POST", "", headers)
-    #     response = conn.getresponse()
-
+addresses = []
 
 class Server(object):                               #creating a server class
-
     def __init__(self):                             #initialization
         self.host = '127.0.0.1'                     #host of server machine
         self.port = 8000                            #port of server machine
@@ -61,6 +37,7 @@ class Server(object):                               #creating a server class
     def create_socket(self):                        #creating a socket function
         try:
             self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  #this is socket
+
         except:
             print("error while creating socket: ")
             sys.exit(1)
@@ -91,20 +68,20 @@ class Server(object):                               #creating a server class
             self.connections.append(conn)           #appending new connections to the connection list
             self.addresses.append(address)          #appending new adress of new connections
             print("connection has been established |" + "IP| " + address[0] + " |port| " + str(address[1]))
+            t= threading.Thread(target=self.start_chat, args=(conn,address))
+            t.start()
 
-
-    def start_chat(self):
+    def start_chat(self,conn,address):
         while True:
-            for conn in self.connections:           #looking for each connection in connection list
-                data = conn.recv(1024)              #receiving data from client
-                if not data.decode():               #validating for empty data
-                    break
-                data1= data.decode()
-                print(data1)                        #printing data
-                data = data1.upper()                #sending data in upper case so we know that it came from server
-                print("sending " + data)
-                conn.send(data.encode())            #sending the data from client
-            continue
+            data = conn.recv(1024)              #receiving data from client
+            if not data.decode():               #validating for empty data
+                break
+            data1= data.decode()
+            print(data1)                        #printing data
+            data = data1.upper()                #sending data in upper case so we know that it came from server
+            print("sending " + data)
+            conn.send(data.encode())            #sending the data from client
+
 
 
 
@@ -119,8 +96,6 @@ class Server(object):                               #creating a server class
                 #     except:
                 #         print("connecting again")
                 #         continue
-
-
 
 
 def create_threads():                   #creating threads
@@ -138,9 +113,10 @@ def start_thread(server):
         if x == 1:
             server.create_socket()      #screate socket
             server.bind_socket()        #connecting to client for communication
-            server.accept_connections() #accepting data from client
-        if x == 2:
-            server.start_chat()         #this thread is used to handel the chatting
+            server.accept_connections()
+             #accepting data from client
+        # if x == 2:
+        #     server.start_chat()         #this thread is used to handel the chatting
         queue.task_done()               #queue is finish
 
 def thread_work():
@@ -148,10 +124,81 @@ def thread_work():
         queue.put(x)                    #storing the thread in queue
     queue.join()                        #joining the queue
 
-def main():
-    create_threads()                    #creat thread is called here
-    thread_work()                       #thread work is called here
+def server():
+        create_threads()                    #creat thread is called here
+        thread_work()
 
 
-if __name__ == '__main__':
-    main()                              #programm start running from here
+def connectServer():                                    #connect server button defined here
+    def buttonOne():                                    #thread buttonOne defined here
+        #serverLabel.config(text="server started")
+        ipAddress.config(text="127.0.0.1")
+        portNumber.config(text="8000")
+        #os.system('python clientGUI.py')
+        server()
+    def threadButtonOne():                              #thread is defined here
+        threading.Thread(target=buttonOne).start()      #new thresd is created
+
+    threadButtonOne()                                   #thread is called here
+
+
+
+# def connectClient():
+#     client_name = clientName.get()
+#     clientLabel.config(text=client_name + " connected")
+#     os.system('python clientGUI.py')
+
+
+def loadChat():                             #https://stackoverflow.com/questions/43480156/how-to-display-a-files-text-in-python-tkinter-text-widget
+    load_file = 'server.txt'                #assigning server.txt file
+    with open(load_file, 'r') as f:         #opening server file
+        serverBox.insert(INSERT, f.read())  #inserting the file in textbox
+
+
+def saveAndQuit():                          #save and quit function is defined here
+    save_file = serverBox.get("1.0", 'end-1c')
+    with open("server.txt", "a") as f:      #opening server.txt file to insert the textbox data
+        f.write(save_file)                  #text from textbox is saved in serrver.txt file
+    main_window.destroy()                   #close the window
+
+
+main_window = Tk()                          #creating new window for server
+
+main_window.title("My Server")              #window title
+main_window.geometry("400x400")             #window size
+
+firstFrame = Frame(main_window, width=40, height=30)
+ip = Label(firstFrame, text="ip address of Server:", fg="Blue")
+ip.grid(row=0, column=0)
+ipAddress = Label(firstFrame, text="", fg="Blue")
+ipAddress.grid(row=1, column=0)
+
+port = Label(firstFrame, text="port number:", fg="blue")
+port.grid(row=0, column=4)
+
+portNumber = Label(firstFrame, text="", fg="blue")
+portNumber.grid(row=1, column=4)
+
+startServer = Button(firstFrame, text="StartServer", bg="green", fg="blue", command=connectServer) #connect server button called here
+startServer.grid(row=2, column=3)
+
+serverLabel = Label(firstFrame, text="", fg="red")
+serverLabel.grid(row=2, column=4)
+
+firstFrame.pack()
+
+secondFrame = Frame(main_window, width=40, height=30)
+
+serverBox = Text(secondFrame, width=45, height=16)
+
+#get data from client and show inside the server
+serverBox.grid()
+
+load = Button(secondFrame, text="Load Chat", bg="green", fg="blue", command=loadChat) #loadd button called here
+load.grid(rowspan=1, columnspan=2)
+
+saveQuit = Button(secondFrame, text="Save & Quit", bg="green", fg="blue", command=saveAndQuit)  #save and quit button called here
+saveQuit.grid(rowspan=2)
+
+secondFrame.pack()
+main_window.mainloop()
