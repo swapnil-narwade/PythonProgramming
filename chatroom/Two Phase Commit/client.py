@@ -37,19 +37,23 @@ class Client(object):                                       #created a Client cl
             time.sleep(5)                                   #wait for 5 second and connect again
 
     def commands(self):
-        name = input("")
-        self.s.send(name.encode())                          #send message to client in string
         while True:                                         #run in loop to get and send request
             try:
+                name = input( "h ")#name of client:-->"" )
+                '''here i want to get the message from the text box from the client GUI
+                and after sendig, it will go to the server and wait for it to receive and catch it in the conn.recv()'''
+                self.s.send(name.encode())                          #send message to client in string
+                '''here i am going to add http encoding to the sending data '''
                 # message = input("-->")                      #message is getting from terminal
                 # while message != 'q':                       #checking if message is not q
                     # self.s.send(message.encode())
                               #sending the message in byte format by encoding
-
+                '''here i want to check for the server to check if the client is terminated or not if terminated by server then
+                all the clients would know this '''
                 data = self.s.recv(1024)
                 print("data received from server " + data.decode())#data received from server and decoded
-                message = input("-->")                  #message is getting from terminal
-                self.s.close()                              #socket is closed
+                #message = input("-->")                  #message is getting from terminal
+                #self.s.close()                              #socket is closed
 
                 # msg = self.s.recv(2048)                     #to receive string
                 # print("-->" + msg.decode())                 #print message

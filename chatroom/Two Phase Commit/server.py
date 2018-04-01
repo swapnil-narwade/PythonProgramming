@@ -69,7 +69,8 @@ class Server(object):                               #creating a server class
             self.connections.append(conn)           #appending new connections to the connection list
             self.addresses.append(address)          #appending new adress of new connections
             print("connection has been established |" + "IP| " + address[0] + " |port| " + str(address[1]))
-            '''created a thread to accept all the connection in conn and address'''
+            '''created a thread to accept the new connection and start start_chat function that will start the communication
+            between client and server '''
             acceptConnectionThread= threading.Thread(target=self.start_chat, args=(conn,address))
             acceptConnectionThread.start()
         '''here I want to create a thread just for connection between coordinator and server so that communicate
@@ -91,12 +92,14 @@ class Server(object):                               #creating a server class
     def start_chat(self,conn,address):
         while True:
             data = conn.recv(1024)              #receiving data from client
+            '''here i will receive the data in http encoding and print it in the server GUI'''
             if not data.decode():               #validating for empty data
                 break
             data1= data.decode()
             print(data1)                        #printing data
             data = data1.upper()                #sending data in upper case so we know that it came from server
             print("sending " + data)
+            '''here we are only sending the message back to the client and not the entire http encoding'''
             conn.send(data.encode())            #sending the data from client
 
 
@@ -119,7 +122,7 @@ def create_threads():                   #creating threads
     server = Server()                   #assignig Server class to server
     for _ in range(2):                  #
         thread = threading.Thread(target=start_thread, args=(server,))  #creating a new thread
-        thread.daemon = True            #freeing the threadnif its working is done
+        thread.daemon = True            #freeing the threading if its working is done
         thread.start()                  #start thr thread
 
 

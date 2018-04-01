@@ -37,19 +37,18 @@ class Coordinator(object):                                       #created a Clie
             time.sleep(5)                                   #wait for 5 second and connect again
 
     def commands(self):
-        name = input("")
-        self.s.send(name.encode())                          #send message to client in string
         while True:                                         #run in loop to get and send request
             try:
             # message = input("-->")                      #message is getting from terminal
             # while message != 'q':                       #checking if message is not q
                 # self.s.send(message.encode())
                           #sending the message in byte format by encoding
-
+                name = input("h")
+                self.s.send(name.encode())                          #send message to client in string
                 data = self.s.recv(1024)
                 print("data received from server " + data.decode())#data received from server and decoded
-                message = input("-->")                  #message is getting from terminal
-                self.s.close()                              #socket is closed
+                #message = input("-->")                  #message is getting from terminal
+                #self.s.close()                              #socket is closed
 
                 # msg = self.s.recv(2048)                     #to receive string
                 # print("-->" + msg.decode())                 #print message
@@ -63,7 +62,7 @@ class Coordinator(object):                                       #created a Clie
                 print("type something")
                 continue
 
-def coordinator():
+def coordinatorFunction():
     coordinator = Coordinator()                                       #assign Client class to client
     coordinator.create_socket()                                  #create socket for client
     while True:                                             #run in loop
@@ -92,7 +91,7 @@ def connectCoordinator():                                    #creating start cli
         coordinatorLabel.config(text="connected")        #getting port and host and displaying on chatbox
         ipAddressCoordinator.config(text=cordinator.host)
         portNumberCoordinator.config(text=cordinator.port)
-#        client()
+        coordinatorFunction()
         '''This is for the validation of client name but as there is only one coordinator we dont need to specify seperately'''
         # else:
         #     messagebox.showerror("warning", "Enter the valid name")#error validation for message
