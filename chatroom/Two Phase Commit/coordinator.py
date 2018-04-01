@@ -36,6 +36,12 @@ class Coordinator(object):                                       #created a Clie
             print("Socket connection error: ")
             time.sleep(5)                                   #wait for 5 second and connect again
 
+
+    def sendFromMessageTextBox(self,message):
+        self.s.send(message.encode())                          #send message to client in string
+        data = self.s.recv(1024)
+        print(data.decode())#data received from server and decoded
+
     def commands(self):
         while True:                                         #run in loop to get and send request
             try:
@@ -43,10 +49,8 @@ class Coordinator(object):                                       #created a Clie
             # while message != 'q':                       #checking if message is not q
                 # self.s.send(message.encode())
                           #sending the message in byte format by encoding
-                name = input("h")
-                self.s.send(name.encode())                          #send message to client in string
-                data = self.s.recv(1024)
-                print("data received from server " + data.decode())#data received from server and decoded
+                name = input("")
+                self.sendFromTerminal(name)
                 #message = input("-->")                  #message is getting from terminal
                 #self.s.close()                              #socket is closed
 
@@ -62,8 +66,11 @@ class Coordinator(object):                                       #created a Clie
                 print("type something")
                 continue
 
+
+coordinator = Coordinator()
+
 def coordinatorFunction():
-    coordinator = Coordinator()                                       #assign Client class to client
+#    coordinator = Coordinator()                                       #assign Client class to client
     coordinator.create_socket()                                  #create socket for client
     while True:                                             #run in loop
         try:
@@ -83,14 +90,14 @@ def coordinatorFunction():
 
 def connectCoordinator():                                    #creating start client button function
     def buttonTwo():                                    #this is thread so the after clicking the start client button the gui wont froze
-        cordinator = Coordinator()
+    #    cordinator = Coordinator()
         '''This is a part for getting the clients name as the coordinator is only one so dont need to change its name'''
         # client_name = clientName.get()                  #this is getting the value form name entry
         # if client_name.isalpha():                       #checking for the client name validation
         #     main_window.title(client_name)              #window named changed to clients name
         coordinatorLabel.config(text="connected")        #getting port and host and displaying on chatbox
-        ipAddressCoordinator.config(text=cordinator.host)
-        portNumberCoordinator.config(text=cordinator.port)
+        ipAddressCoordinator.config(text=coordinator.host)
+        portNumberCoordinator.config(text=coordinator.port)
         coordinatorFunction()
         '''This is for the validation of client name but as there is only one coordinator we dont need to specify seperately'''
         # else:
@@ -111,7 +118,11 @@ def sendMessage():                                      #send message function d
                              str(main_window.title() + " :- " + message_send + " (" + datetime.datetime.now().strftime('%M:%S')
                                  + ")\n"))
         # message_terminal = serveBoxText.get("1.0", END)    #sending messages to the terminal
-        print("coordinator:- " + message_send)
+        # print("coordinator:- " + message_send)
+        date = datetime.datetime.now()
+        httpEncodedMessage = "POST HTTP/1.1\nHost: "+coordinator.host+":"+str(coordinator.port)+"\nUser-Agent: Independant/1.0\nDate: "+str(date)+"\nContent-Type: text/plain\nContent-Length: "+str(len(message_send))+"\n\n[START]coordinator: "+message_send+"\n"
+
+        coordinator.sendFromMessageTextBox(httpEncodedMessage)
         message.set("")
     else:
         messagebox.showerror("warning", "empty message")    #validation for message

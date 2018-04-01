@@ -95,12 +95,13 @@ class Server(object):                               #creating a server class
             '''here i will receive the data in http encoding and print it in the server GUI'''
             if not data.decode():               #validating for empty data
                 break
-            data1= data.decode()
-            print(data1)                        #printing data
-            data = data1.upper()                #sending data in upper case so we know that it came from server
-            print("sending " + data)
+            dataInChar= data.decode()
+            dummy,dataOnlyMessage = dataInChar.split("[START]")
+            print(dataInChar)                        #printing data
+            #data = data1.upper()                #sending data in upper case so we know that it came from server
+            #print("sending " + data)
             '''here we are only sending the message back to the client and not the entire http encoding'''
-            conn.send(data.encode())            #sending the data from client
+            conn.send(dataOnlyMessage.encode())            #sending the data from client
 
 
 
