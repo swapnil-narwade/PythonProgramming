@@ -53,8 +53,9 @@ class Server(object):                               #creating a server class
 
 
     def accept_connections(self):                   #accepting the connections
-        for c in self.connections:                  #loop for all the available connections
-            c.close()                               #close all the connections
+        '''wanted to close all the connection before start new connection list but no need as we are already defining which port we want to connect'''
+        # for c in self.connections:                  #loop for all the available connections
+        #     c.close()                               #close all the connections
         self.connections = []
         self.addresses = []
         while 1:
@@ -68,8 +69,24 @@ class Server(object):                               #creating a server class
             self.connections.append(conn)           #appending new connections to the connection list
             self.addresses.append(address)          #appending new adress of new connections
             print("connection has been established |" + "IP| " + address[0] + " |port| " + str(address[1]))
-            t= threading.Thread(target=self.start_chat, args=(conn,address))
-            t.start()
+            '''created a thread to accept all the connection in conn and address'''
+            acceptConnectionThread= threading.Thread(target=self.start_chat, args=(conn,address))
+            acceptConnectionThread.start()
+        '''here I want to create a thread just for connection between coordinator and server so that communicate
+        to each other this can be done using accepting first connection in connection[]'''
+
+
+        '''here i want to create a function in that we will send data from coordinator to server
+        and this function will be the target for the above thread'''
+        '''this function saves the message in server log file'''
+
+
+        '''here I want to create another thread which accept 2nd 3rd 4th connection from connection lsit
+        and start communicate with server '''
+
+        '''this function contains the program for broadcasting, the message is here inside the log of server
+        this function also gets the votes from all the client 2,3,4 and send this to coordinator '''
+
 
     def start_chat(self,conn,address):
         while True:

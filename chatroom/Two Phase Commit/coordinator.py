@@ -1,3 +1,12 @@
+#name Swapnil Narwade
+#UTA ID-- smn6025
+#Assignment-2
+#referances:-- 1)	https://docs.python.org/2/library/httplib.html
+# 2)	https://docs.python.org/2/library/datetime.html
+# 3)	https://www.learnpython.org/en/Modules_and_Packages
+# 4)	https://github.com/buckyroberts/Turtle/tree/master/Multiple_Clients
+# 5)	https://www.youtube.com/watch?v=Po5JHXIoDr0&t=5s
+
 from tkinter import *
 from tkinter import messagebox
 import sys
@@ -110,10 +119,13 @@ def sendMessage():                                      #send message function d
 
 
 def sendGlobalCommit():
+    '''here coordinator gets the vote of all the clients and send message to the server with its decision'''
+
     pass
 
 
 def sendGlobalAbort():
+    '''here coordinator gets the vote of all the clients and send message to the server with its decision'''
     pass
 
 

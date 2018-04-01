@@ -115,10 +115,12 @@ def sendMessage():                                      #send message function d
         messagebox.showerror("warning", "empty message")    #validation for message
 
 def sendCommit():
+    '''here the client send the commit vote and send it to the server and then server relay it to coordinator'''
     pass
 
 
 def sendAbort():
+    '''here the client send the abort vote and send it to the server and then server relay it to coordinator'''
     pass
 
 main_window = Tk()                                      #creating GUI window using tkInter library
